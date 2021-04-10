@@ -65,6 +65,9 @@ namespace Unity.FPS.Gameplay
 
         const QueryTriggerInteraction k_TriggerInteraction = QueryTriggerInteraction.Collide;
 
+        public bool gravItemInverse;
+        public string gravitem = "Gravity Item";
+
         void OnEnable()
         {
             m_ProjectileBase = GetComponent<ProjectileBase>();
@@ -219,8 +222,59 @@ namespace Unity.FPS.Gameplay
             return true;
         }
 
+        public void FixedUpdate()
+        {
+            if (gravItemInverse)
+            {
+                NormalGravity();
+            }
+
+            else if (!gravItemInverse)
+            {
+                InvertedGravity();
+            }
+        }
+
+        public void InvertedGravity()
+        {
+
+        }
+
+        public void NormalGravity()
+        {
+
+        }
+
         void OnHit(Vector3 point, Vector3 normal, Collider collider)
         {
+            GameObject gravityItem = GameObject.FindGameObjectWithTag("Grav Item").gameObject;
+
+            if (collider.gameObject.tag == "Grav Item")
+            {
+                Debug.Log("Hit Grav Item!");
+
+                gravItemInverse = !gravItemInverse;
+
+                if (gravItemInverse)
+                {
+                    Debug.Log("Normal Gravity!");
+
+                    gravityItem.GetComponent<Rigidbody>().useGravity = true;
+                }
+
+                else
+                {
+                    Debug.Log("Inverted Gravity!");
+
+                    gravityItem.GetComponent<Rigidbody>().useGravity = false;
+                }
+            }
+
+            else if (collider.gameObject.tag == "Player Grav")
+            {
+                Debug.Log("Hit Player Grav!");
+            }
+
             // damage
             if (AreaOfDamage)
             {

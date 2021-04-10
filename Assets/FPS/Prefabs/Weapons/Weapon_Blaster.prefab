@@ -189,28 +189,28 @@ MonoBehaviour:
   ShootType: 0
   ProjectilePrefab: {fileID: 726492946817092075, guid: e3bc50d1eb04327459dc4301b244515a,
     type: 3}
-  DelayBetweenShots: 0.1
+  DelayBetweenShots: 1
   BulletSpreadAngle: 0
   BulletsPerShot: 1
-  RecoilForce: 1
+  RecoilForce: 1.5
   AimZoomRatio: 0.5
   AimOffset: {x: 0, y: 0.075, z: 0}
   AutomaticReload: 1
   HasPhysicalBullets: 0
-  ClipSize: 30
+  ClipSize: 2
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
   ShellPoolSize: 1
-  AmmoReloadRate: 16
+  AmmoReloadRate: 1
   AmmoReloadDelay: 1
-  MaxAmmo: 16
+  MaxAmmo: 2
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2
   AmmoUsedOnStartCharge: 1
   AmmoUsageRateWhileCharging: 2
   WeaponAnimator: {fileID: 0}
-  MuzzleFlashPrefab: {fileID: 748781637555137343, guid: 9f671b22f25370048a18fb1f821294ec,
+  MuzzleFlashPrefab: {fileID: 748781637555137343, guid: 4f5d4e5eaa0e5104791549cea3dc3f23,
     type: 3}
   UnparentMuzzleFlash: 0
   ShootSfx: {fileID: 8300000, guid: 53d2238f4c4b2aa4f8e559c7af9e0126, type: 3}
@@ -255,8 +255,8 @@ MonoBehaviour:
   SteamVfxEmissionRateMax: 8
   OverheatGradient:
     serializedVersion: 2
-    key0: {r: 0.31408098, g: 3.482202, b: 0, a: 1}
-    key1: {r: 5.2164755, g: 1.5567491, b: 0, a: 1}
+    key0: {r: 0, g: 3.041434, b: 3.482202, a: 1}
+    key1: {r: 5.2164745, g: 0, b: 4.684898, a: 1}
     key2: {r: 8, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
