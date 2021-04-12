@@ -68,6 +68,8 @@ namespace Unity.FPS.Gameplay
         public bool gravItemInverse;
         public string gravitem = "Gravity Item";
 
+        public string enemygrav = "Gravity Enemy";
+
         void OnEnable()
         {
             m_ProjectileBase = GetComponent<ProjectileBase>();
@@ -249,6 +251,8 @@ namespace Unity.FPS.Gameplay
         {
             GameObject gravityItem = GameObject.FindGameObjectWithTag("Grav Item").gameObject;
 
+            GameObject gravityEnemy = GameObject.FindGameObjectWithTag("Enemy Grav").gameObject;
+
             if (collider.gameObject.tag == "Grav Item")
             {
                 Debug.Log("Hit Grav Item!");
@@ -273,6 +277,17 @@ namespace Unity.FPS.Gameplay
             else if (collider.gameObject.tag == "Player Grav")
             {
                 Debug.Log("Hit Player Grav!");
+            }
+
+            else if (collider.gameObject.tag == "Enemy Grav")
+            {
+                Debug.Log("Hit Enemy Grav!");
+
+                GameObject enemy = GameObject.FindGameObjectWithTag("Enemy Grav").gameObject;
+
+                enemy.GetComponent<Rigidbody>().useGravity = true;
+
+                enemy.GetComponent<Rigidbody>().AddForce (0, 10000, 0);
             }
 
             // damage
