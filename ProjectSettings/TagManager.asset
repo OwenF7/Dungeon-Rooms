@@ -8,6 +8,7 @@ TagManager:
   - Grav Item
   - Player Grav
   - Enemy Grav
+  - Grav Projectile
   layers:
   - Default
   - TransparentFX

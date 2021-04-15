@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
+using System.Collections;
 
 namespace Unity.FPS.Gameplay
 {
-    public class ProjectileStandard : ProjectileBase
+    public class ProjectileStandard : ProjectileBase 
     {
         [Header("General")] [Tooltip("Radius of this projectile's collision detection")]
         public float Radius = 0.01f;
@@ -65,10 +66,10 @@ namespace Unity.FPS.Gameplay
 
         const QueryTriggerInteraction k_TriggerInteraction = QueryTriggerInteraction.Collide;
 
-        public bool gravItemInverse;
+       /* public bool gravItemInverse;
         public string gravitem = "Gravity Item";
 
-        public string enemygrav = "Gravity Enemy";
+        public string enemygrav = "Gravity Enemy";*/
 
         void OnEnable()
         {
@@ -224,71 +225,34 @@ namespace Unity.FPS.Gameplay
             return true;
         }
 
-        public void FixedUpdate()
-        {
-            if (gravItemInverse)
-            {
-                NormalGravity();
-            }
-
-            else if (!gravItemInverse)
-            {
-                InvertedGravity();
-            }
-        }
-
-        public void InvertedGravity()
-        {
-
-        }
-
-        public void NormalGravity()
-        {
-
-        }
-
         void OnHit(Vector3 point, Vector3 normal, Collider collider)
         {
-            GameObject gravityItem = GameObject.FindGameObjectWithTag("Grav Item").gameObject;
+            /*GameObject other = collider.gameObject;
 
-            GameObject gravityEnemy = GameObject.FindGameObjectWithTag("Enemy Grav").gameObject;
+            //GravGoBurrr script = other.GetComponent<GravityGoBurrr>();
 
-            if (collider.gameObject.tag == "Grav Item")
+            if (other.CompareTag("Grav Item"))
             {
                 Debug.Log("Hit Grav Item!");
 
-                gravItemInverse = !gravItemInverse;
-
-                if (gravItemInverse)
+                if (other.GetComponent("GravityGoBurrr")) 
                 {
-                    Debug.Log("Normal Gravity!");
+                    Debug.Log("Found GravityGoBurr Script!");
 
-                    gravityItem.GetComponent<Rigidbody>().useGravity = true;
+                    GravGoBurrr script = other.GetComponent<GravityGoBurrr>();
+
+                    script.GravityUp();
+
+                    other.GetComponent<GravityGoBurrr>().GravityUp();
                 }
 
                 else
                 {
-                    Debug.Log("Inverted Gravity!");
-
-                    gravityItem.GetComponent<Rigidbody>().useGravity = false;
+                    Debug.Log("Nothing happened!");
                 }
-            }
 
-            else if (collider.gameObject.tag == "Player Grav")
-            {
-                Debug.Log("Hit Player Grav!");
-            }
-
-            else if (collider.gameObject.tag == "Enemy Grav")
-            {
-                Debug.Log("Hit Enemy Grav!");
-
-                GameObject enemy = GameObject.FindGameObjectWithTag("Enemy Grav").gameObject;
-
-                enemy.GetComponent<Rigidbody>().useGravity = true;
-
-                enemy.GetComponent<Rigidbody>().AddForce (0, 10000, 0);
-            }
+                //other.GetComponent<GravityGoBurrr>().GravityUp();
+            }*/
 
             // damage
             if (AreaOfDamage)

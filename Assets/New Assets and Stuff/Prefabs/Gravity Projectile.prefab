@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &554559185733742923
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081625246118773195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 16}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3115428922136638714
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,9 +22,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6602749067160966582}
+  - component: {fileID: 8222948497283020424}
   m_Layer: 0
   m_Name: Tip
-  m_TagString: Untagged
+  m_TagString: Grav Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,6 +44,63 @@ Transform:
   m_Father: {fileID: 2081625246118773199}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8222948497283020424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115428922136638714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7051921505347591540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8685710515523157145}
+  - component: {fileID: 7052382340026088685}
+  m_Layer: 0
+  m_Name: Back Tip
+  m_TagString: Grav Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8685710515523157145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051921505347591540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -7.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2081625246118773199}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7052382340026088685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051921505347591540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8006596084664850915
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +113,7 @@ GameObject:
   - component: {fileID: 726492946817092075}
   m_Layer: 0
   m_Name: Gravity Projectile
-  m_TagString: Untagged
+  m_TagString: Grav Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,8 +164,6 @@ MonoBehaviour:
   Damage: 0
   AreaOfDamage: {fileID: 0}
   RadiusColor: {r: 0, g: 0.2, b: 0.2, a: 0.2}
-  gravItemInverse: 0
-  gravitem: Gravity Item
 --- !u!1001 &1566633163927562607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,10 +241,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 675161360108791969, guid: 585567686b71fe5458e91550e1154860,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 675161360108791969, guid: 585567686b71fe5458e91550e1154860,
+        type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 675161360108791969, guid: 585567686b71fe5458e91550e1154860,
+        type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 675161360108791969, guid: 585567686b71fe5458e91550e1154860,
+        type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 675161360108791969, guid: 585567686b71fe5458e91550e1154860,
+        type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 675161360108791972, guid: 585567686b71fe5458e91550e1154860,
         type: 3}
       propertyPath: m_Name
       value: CFXR Electric Barrier (HDR)
+      objectReference: {fileID: 0}
+    - target: {fileID: 675161360108791972, guid: 585567686b71fe5458e91550e1154860,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grav Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 675161361436544007, guid: 585567686b71fe5458e91550e1154860,
         type: 3}
@@ -184,6 +283,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 585567686b71fe5458e91550e1154860, type: 3}
+--- !u!1 &2081625246118773195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 675161360108791972, guid: 585567686b71fe5458e91550e1154860,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566633163927562607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2081625246118773199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 675161360108791968, guid: 585567686b71fe5458e91550e1154860,
